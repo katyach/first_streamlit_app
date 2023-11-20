@@ -13,8 +13,6 @@ my_fruit_list = my_fruit_list.set_index('Fruit')
 streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index))
 
 # Display the table on the page.
-#now pick a select list
-streamlit.multiselect ("Pick some fruits:", list (my_fruit_list.index),['Avocado','Strawberries'])
 
 # We'll ask our app to put the list of selected fruits into a variable called fruits_selected. 
 #Then, we'll ask our app to use the fruits in our fruits_selected list to pull rows from the full data set (and assign that data to a variable called fruits_to_show). 
