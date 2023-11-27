@@ -39,20 +39,23 @@ fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 # put it into the dataframe.
 streamlit.dataframe(fruityvice_normalized)
 
+#removed - next section so that it does not conflict with another 
+
 #edit
-import requests
-fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + "kiwi")
+#import requests
+#fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + "kiwi")
 
 #normalized json response
-fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
+#fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 
 #output it the screen as a table
-streamlit.dataframe(fruityvice_normalized)
+#streamlit.dataframe(fruityvice_normalized)
 
-#add a Text Entry Box and Send the Input to Fruityvice as Part of the API Call
+#add a text entry box and  send the Input to Fruityvice as Part of the API Call
 
+streamlit.header("Fruityvice Fruit Advice!")
 fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
 streamlit.write('The user entered ', fruit_choice)
 
-#import requests
-#fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
+import requests
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
