@@ -1,4 +1,4 @@
-sectimport streamlit
+import streamlit
 streamlit.title ('Hello,world!')
 streamlit.header('Breakfast Menu')
 streamlit.text('Omega 3 & Blueberry Oatmeal')
