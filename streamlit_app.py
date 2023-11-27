@@ -62,5 +62,4 @@ fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_c
 
 #does not show choice, still. need to add the table somehow
 #fruityvice_normalized = pandas.json_normalize(fruityvice_response.json()) DID NOT WORK
-
 streamlit.dataframe(fruityvice_normalized) #STILL OLD TABLE
