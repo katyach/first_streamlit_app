@@ -87,19 +87,9 @@ my_data_rows = my_cur.fetchall()
 streamlit.header("The fruit load list contains:")
 streamlit.dataframe(my_data_rows)
 
-#allow the end user to add fruit to the list
+#allow the end user to add fruit to the list - a try
 
-streamlit.dataframe(my_fruit_list)
-my_fruit_list = my_fruit_list.set_index('Fruit')
-streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index))
+add_my_fruit = pc_rivery_db.public.fruit_load_list.set_index('Fruit')
+streamlit.multiselect("add_my_fruit:", list(pc_rivery_db.public.fruit_load_list.index))
 
-# Display the table on the page.
-
-# We'll ask our app to put the list of selected fruits into a variable called fruits_selected. 
-#Then, we'll ask our app to use the fruits in our fruits_selected list to pull rows from the full data set (and assign that data to a variable called fruits_to_show). 
-#Finally, we'll ask the app to use the data in fruits_to_show in the dataframe it displays on the page. 
-fruits_selected=streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index),['Avocado','Strawberries'])
-fruits_to_show=my_fruit_list.loc[fruits_selected]
-#display
-streamlit.dataframe(fruits_to_show)
 
