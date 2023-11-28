@@ -89,7 +89,7 @@ streamlit.dataframe(my_data_rows)
 
 #allow the end user to add fruit to the list - a try
 
-add_my_fruit = pc_rivery_db.public.fruit_load_list.set_index('Fruit')
-streamlit.multiselect("add_my_fruit:", list(pc_rivery_db.public.fruit_load_list.index))
+add_my_fruit = streamlit.multiselect("add_my_fruit:", list(fruit_load_list.index))
+streamlit.dataframe(my_data_rows)
 
 
